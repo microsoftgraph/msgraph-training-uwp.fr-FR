@@ -1,27 +1,25 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cet exercice, vous allez créer une application native Azure AD à l'aide du portail de registre d'applications (ARP).
+Dans cet exercice, vous allez créer une application native Azure AD à l'aide du centre d'administration Azure Active Directory.
 
-1. Ouvrez un navigateur et accédez au [portail d'inscription des applications](https://apps.dev.microsoft.com) et connectez-vous à l'aide d'un **compte personnel** (alias: Microsoft Account) ou d'un **compte professionnel ou scolaire**.
+1. Ouvrez un navigateur et accédez au [Centre d'administration Azure Active Directory](https://aad.portal.azure.com) et ouvrez une session à l'aide d'un compte **personnel** (alias Microsoft) ou d'un **compte professionnel ou scolaire**.
 
-1. Sélectionnez **Ajouter une application** en haut de la page.
+1. Sélectionnez **Azure Active Directory** dans le volet de navigation de gauche, puis sélectionnez **inscriptions des applications (aperçu)** sous **gérer**.
 
-    > [!NOTE]
-    > Si vous voyez plus d'un bouton **Ajouter une application** sur la page, sélectionnez celui qui correspond à la liste **applications** convergées.
+    ![Capture d'écran des inscriptions d'application ](./images/aad-portal-app-registrations.png)
 
-1. Sur la page **inscrire votre application** , définissez le **nom** de l'application sur le **didacticiel Graph UWP** et sélectionnez **créer**.
+1. Sélectionnez **nouvelle inscription**. Sur la page **inscrire une application** , définissez les valeurs comme suit.
 
-    ![Capture d'écran de la création d'une nouvelle application dans le site Web du portail d'inscription des applications](./images/arp-create-app-01.png)
+    - Définissez **nom** sur `UWP Graph Tutorial`.
+    - Définissez les types de comptes **pris en charge** sur **les comptes de tous les comptes d'annuaire et de Microsoft personnels**.
+    - Laissez l' **URI** de redirection vide.
 
-1. Sur la page **d'inscription du didacticiel Graph UWP** , dans la section **Propriétés** , copiez l'ID de l' **application** , car vous en aurez besoin plus tard.
+    ![Capture d'écran de la page inscrire une application](./images/aad-register-an-app.png)
 
-    ![Capture d'écran de l'ID de l'application nouvellement créée](./images/arp-create-app-02.png)
+1. Sélectionnez **Enregistrer**. Sur la page **didacticiel Graph UWP** , copiez la valeur de l' **ID d'application (client)** et enregistrez-la, vous en aurez besoin à l'étape suivante.
 
-1. Faites déFiler **** vers le bas jusqu'à la section plateformes.
+    ![Capture d'écran de l'ID d'application de la nouvelle inscription de l'application](./images/aad-application-id.png)
 
-    1. Sélectionnez **Ajouter une plateforme**.
-    1. Dans la boîte de dialogue **Ajouter une plateforme** , sélectionnez **application native**.
+1. Sélectionnez le lien **Ajouter un URI de redirection** . Sur la page **URI** de redirection, recherchez la section **URI de redirection suggérée pour les clients publics (mobile, bureau)** . Sélectionnez l' `urn:ietf:wg:oauth:2.0:oob` URI, puis **Enregistrer**.
 
-        ![Capture d'écran création d'une plateforme pour l'application](./images/arp-create-app-03.png)
-
-1. Faites déFiler la page jusqu'en bas et sélectionnez **Enregistrer**.
+    ![Capture d'écran de la page des URI de redirection](./images/aad-redirect-uris.png)

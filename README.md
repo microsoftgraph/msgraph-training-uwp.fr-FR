@@ -28,16 +28,17 @@ Ce module a été enregistré et est disponible dans le canal YouTube de dévelo
 
 ## <a name="contributors"></a>Collaborateurs
 
-|        Rôles         |                            Auteur (s)                             |
+| Rôles                | Auteur (s)                                                        |
 | -------------------- | ---------------------------------------------------------------- |
-| Manuels/diapositives de l'atelier | Andrew Connell (MVP Microsoft, Voitanos) @andrewconnell          |
-| QA                   | Julie Turner (MVP Microsoft, Sympraxis Consulting) @juliemturner |
-| Commanditaire/support    | Yina (Microsoft) @yina_arenas                             |
+| Manuels/diapositives de l'atelier | Andrew Connell (MVP Microsoft, Voitanos)@andrewconnell          |
+| QA                   | Julie Turner (MVP Microsoft, Sympraxis Consulting)@juliemturner |
+| Commanditaire/support    | Yina (Microsoft)@yina_arenas                             |
 
 ## <a name="version-history"></a>Historique des versions
 
-| Version |        Date        |                       Commentaires                       |
+| Version | Date               | Comments                                             |
 | ------- | ------------------ | ---------------------------------------------------- |
+| 1.7     | 6 mars 2019      | actualisation du contenu 2019Q3                               |
 | 1.6     | 19 décembre 2018  | actualisation du contenu 2019Q2                               |
 | 1,5     | 27 novembre 2018  | Intégré à docs.microsoft.com/graph                |
 | 1.4     | 2 novembre 2018   | Révision de modules de cohérence avec d'autres formations. |
@@ -48,7 +49,7 @@ Ce module a été enregistré et est disponible dans le canal YouTube de dévelo
 
 ## <a name="disclaimer"></a>Clause d’exclusion de responsabilité
 
-**CE CODE est fourni *en* l'État sans garantie, expresse ou implicite, y compris toute garantie implicite d'adéquation à un usage particulier, de qualité MARCHANDe ou de non-contrefaçon.**
+**CE CODE est fourni _en_ l'État sans garantie, expresse ou implicite, y compris toute garantie implicite d'adéquation à un usage particulier, de qualité MARCHANDe ou de non-contrefaçon.**
 
 <!-- markdownlint-disable MD033 -->
 <img src="https://telemetry.sharepointpnp.com/msgraph-training-uwp" />
