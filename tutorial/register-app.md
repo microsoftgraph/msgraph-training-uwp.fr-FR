@@ -1,27 +1,25 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-<span data-ttu-id="06d92-101">Dans cet exercice, vous allez créer une application native Azure AD à l'aide du portail de registre d'applications (ARP).</span><span class="sxs-lookup"><span data-stu-id="06d92-101">In this exercise you will create a new Azure AD native application using the Application Registry Portal (ARP).</span></span>
+<span data-ttu-id="2571c-101">Dans cet exercice, vous allez créer une application native Azure AD à l'aide du centre d'administration Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="2571c-101">In this exercise you will create a new Azure AD native application using the Azure Active Directory admin center.</span></span>
 
-1. <span data-ttu-id="06d92-102">Ouvrez un navigateur et accédez au [portail d'inscription des applications](https://apps.dev.microsoft.com) et connectez-vous à l'aide d'un **compte personnel** (alias: Microsoft Account) ou d'un **compte professionnel ou scolaire**.</span><span class="sxs-lookup"><span data-stu-id="06d92-102">Open a browser and navigate to the [Application Registration Portal](https://apps.dev.microsoft.com) and login using a **personal account** (aka: Microsoft Account) or **Work or School Account**.</span></span>
+1. <span data-ttu-id="2571c-102">Ouvrez un navigateur et accédez au [Centre d'administration Azure Active Directory](https://aad.portal.azure.com) et ouvrez une session à l'aide d'un compte **personnel** (alias Microsoft) ou d'un **compte professionnel ou scolaire**.</span><span class="sxs-lookup"><span data-stu-id="2571c-102">Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com) and login using a **personal account** (aka: Microsoft Account) or **Work or School Account**.</span></span>
 
-1. <span data-ttu-id="06d92-103">Sélectionnez **Ajouter une application** en haut de la page.</span><span class="sxs-lookup"><span data-stu-id="06d92-103">Select **Add an app** at the top of the page.</span></span>
+1. <span data-ttu-id="2571c-103">Sélectionnez **Azure Active Directory** dans le volet de navigation de gauche, puis sélectionnez **inscriptions des applications (aperçu)** sous **gérer**.</span><span class="sxs-lookup"><span data-stu-id="2571c-103">Select **Azure Active Directory** in the left-hand navigation, then select **App registrations (Preview)** under **Manage**.</span></span>
 
-    > [!NOTE]
-    > <span data-ttu-id="06d92-104">Si vous voyez plus d'un bouton **Ajouter une application** sur la page, sélectionnez celui qui correspond à la liste **applications** convergées.</span><span class="sxs-lookup"><span data-stu-id="06d92-104">If you see more than one **Add an app** button on the page, select the one that corresponds to the **Converged apps** list.</span></span>
+    ![<span data-ttu-id="2571c-104">Capture d'écran des inscriptions d'application</span><span class="sxs-lookup"><span data-stu-id="2571c-104">A screenshot of the App registrations</span></span> ](./images/aad-portal-app-registrations.png)
 
-1. <span data-ttu-id="06d92-105">Sur la page **inscrire votre application** , définissez le **nom** de l'application sur le **didacticiel Graph UWP** et sélectionnez **créer**.</span><span class="sxs-lookup"><span data-stu-id="06d92-105">On the **Register your application** page, set the **Application Name** to **UWP Graph Tutorial** and select **Create**.</span></span>
+1. <span data-ttu-id="2571c-105">Sélectionnez **nouvelle inscription**.</span><span class="sxs-lookup"><span data-stu-id="2571c-105">Select **New registration**.</span></span> <span data-ttu-id="2571c-106">Sur la page **inscrire une application** , définissez les valeurs comme suit.</span><span class="sxs-lookup"><span data-stu-id="2571c-106">On the **Register an application** page, set the values as follows.</span></span>
 
-    ![Capture d'écran de la création d'une nouvelle application dans le site Web du portail d'inscription des applications](./images/arp-create-app-01.png)
+    - <span data-ttu-id="2571c-107">Définissez **nom** sur `UWP Graph Tutorial`.</span><span class="sxs-lookup"><span data-stu-id="2571c-107">Set **Name** to `UWP Graph Tutorial`.</span></span>
+    - <span data-ttu-id="2571c-108">Définissez les types de comptes **pris en charge** sur **les comptes de tous les comptes d'annuaire et de Microsoft personnels**.</span><span class="sxs-lookup"><span data-stu-id="2571c-108">Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts**.</span></span>
+    - <span data-ttu-id="2571c-109">Laissez l' **URI** de redirection vide.</span><span class="sxs-lookup"><span data-stu-id="2571c-109">Leave **Redirect URI** empty.</span></span>
 
-1. <span data-ttu-id="06d92-107">Sur la page **d'inscription du didacticiel Graph UWP** , dans la section **Propriétés** , copiez l'ID de l' **application** , car vous en aurez besoin plus tard.</span><span class="sxs-lookup"><span data-stu-id="06d92-107">On the **UWP Graph Tutorial Registration** page, under the **Properties** section, copy the **Application Id** as you will need it later.</span></span>
+    ![Capture d'écran de la page inscrire une application](./images/aad-register-an-app.png)
 
-    ![Capture d'écran de l'ID de l'application nouvellement créée](./images/arp-create-app-02.png)
+1. <span data-ttu-id="2571c-111">Sélectionnez **Enregistrer**.</span><span class="sxs-lookup"><span data-stu-id="2571c-111">Choose **Register**.</span></span> <span data-ttu-id="2571c-112">Sur la page **didacticiel Graph UWP** , copiez la valeur de l' **ID d'application (client)** et enregistrez-la, vous en aurez besoin à l'étape suivante.</span><span class="sxs-lookup"><span data-stu-id="2571c-112">On the **UWP Graph Tutorial** page, copy the value of the **Application (client) ID** and save it, you will need it in the next step.</span></span>
 
-1. <span data-ttu-id="06d92-109">Faites déFiler \*\*\*\* vers le bas jusqu'à la section plateformes.</span><span class="sxs-lookup"><span data-stu-id="06d92-109">Scroll down to the **Platforms** section.</span></span>
+    ![Capture d'écran de l'ID d'application de la nouvelle inscription de l'application](./images/aad-application-id.png)
 
-    1. <span data-ttu-id="06d92-110">Sélectionnez **Ajouter une plateforme**.</span><span class="sxs-lookup"><span data-stu-id="06d92-110">Select **Add Platform**.</span></span>
-    1. <span data-ttu-id="06d92-111">Dans la boîte de dialogue **Ajouter une plateforme** , sélectionnez **application native**.</span><span class="sxs-lookup"><span data-stu-id="06d92-111">In the **Add Platform** dialog, select **Native Application**.</span></span>
+1. <span data-ttu-id="2571c-114">Sélectionnez le lien **Ajouter un URI de redirection** .</span><span class="sxs-lookup"><span data-stu-id="2571c-114">Select the **Add a Redirect URI** link.</span></span> <span data-ttu-id="2571c-115">Sur la page **URI** de redirection, recherchez la section **URI de redirection suggérée pour les clients publics (mobile, bureau)** .</span><span class="sxs-lookup"><span data-stu-id="2571c-115">On the **Redirect URIs** page, locate the **Suggested Redirect URIs for public clients (mobile, desktop)** section.</span></span> <span data-ttu-id="2571c-116">Sélectionnez l' `urn:ietf:wg:oauth:2.0:oob` URI, puis **Enregistrer**.</span><span class="sxs-lookup"><span data-stu-id="2571c-116">Select the `urn:ietf:wg:oauth:2.0:oob` URI, then choose **Save**.</span></span>
 
-        ![Capture d'écran création d'une plateforme pour l'application](./images/arp-create-app-03.png)
-
-1. <span data-ttu-id="06d92-113">Faites déFiler la page jusqu'en bas et sélectionnez **Enregistrer**.</span><span class="sxs-lookup"><span data-stu-id="06d92-113">Scroll to the bottom of the page and select **Save**.</span></span>
+    ![Capture d'écran de la page des URI de redirection](./images/aad-redirect-uris.png)
