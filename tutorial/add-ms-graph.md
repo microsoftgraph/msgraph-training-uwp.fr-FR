@@ -1,12 +1,12 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-Dans cet exercice, vous allez incorporer Microsoft Graph dans l'application. Pour cette application, vous allez utiliser la [bibliothèque cliente Microsoft Graph pour .net](https://github.com/microsoftgraph/msgraph-sdk-dotnet) pour effectuer des appels à Microsoft Graph.
+Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application. Pour cette application, vous allez utiliser la [bibliothèque cliente Microsoft Graph pour .net](https://github.com/microsoftgraph/msgraph-sdk-dotnet) pour effectuer des appels à Microsoft Graph.
 
-## <a name="get-calendar-events-from-outlook"></a>Obtenir des événements de calendrier à partir d'Outlook
+## <a name="get-calendar-events-from-outlook"></a>Obtenir des événements de calendrier à partir d’Outlook
 
-Commencez par ajouter une nouvelle page pour l'affichage Calendrier. Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l'Explorateur de solutions et choisissez **Ajouter un nouvel élément >...**. Choisissez **page vierge**, entrez `CalendarPage.xaml` dans le champ **nom** , puis choisissez **Ajouter**.
+Commencez par ajouter une nouvelle page pour l’affichage Calendrier. Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l’Explorateur de solutions et choisissez **Ajouter un nouvel élément >...**. Choisissez **page vierge**, entrez `CalendarPage.xaml` dans le champ **nom** , puis choisissez **Ajouter**.
 
-Ouvrez `CalendarPage.xaml` et ajoutez la ligne suivante à l'intérieur `<Grid>` de l'élément existant.
+Ouvrez `CalendarPage.xaml` et ajoutez la ligne suivante à l’intérieur `<Grid>` de l’élément existant.
 
 ```xml
 <TextBlock x:Name="Events" TextWrapping="Wrap"/>
@@ -59,13 +59,13 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Examinez le code dans `OnNavigatedTo` est en cours d'exécution.
+Examinez le code dans `OnNavigatedTo` est en cours d’exécution.
 
-- L'URL qui sera appelée est `/v1.0/me/events`.
-- La `Select` fonction limite les champs renvoyés pour chaque événement à ceux que l'affichage utilise réellement.
-- La `OrderBy` fonction trie les résultats en fonction de la date et de l'heure de leur création, avec l'élément le plus récent en premier.
+- L’URL qui sera appelée est `/v1.0/me/events`.
+- La `Select` fonction limite les champs renvoyés pour chaque événement à ceux que l’affichage utilise réellement.
+- La `OrderBy` fonction trie les résultats en fonction de la date et de l’heure de leur création, avec l’élément le plus récent en premier.
 
-Juste avant d'exécuter l'application, pour pouvoir accéder à cette page de calendrier, modifiez la `NavView_ItemInvoked` méthode dans le `MainPage.xaml.cs` fichier de manière à remplacer la `throw new NotImplementedException();` ligne comme suit.
+Juste avant d’exécuter l’application, pour pouvoir accéder à cette page de calendrier, modifiez la `NavView_ItemInvoked` méthode dans le `MainPage.xaml.cs` fichier de manière à remplacer la `throw new NotImplementedException();` ligne comme suit.
 
 ```cs
 case "calendar":
@@ -73,7 +73,7 @@ case "calendar":
     break;
 ```
 
-Vous pouvez maintenant exécuter l'application, vous connecter et cliquer sur l'élément de navigation **calendrier** dans le menu de gauche. Vous devriez voir un dump JSON des événements sur le calendrier de l'utilisateur.
+Vous pouvez maintenant exécuter l’application, vous connecter et cliquer sur l’élément de navigation **calendrier** dans le menu de gauche. Vous devriez voir un dump JSON des événements sur le calendrier de l’utilisateur.
 
 ## <a name="display-the-results"></a>Afficher les résultats
 
@@ -127,9 +127,9 @@ Cela remplace le `TextBlock` par un `DataGrid`. Maintenant, `CalendarPage.xaml.c
 EventList.ItemsSource = events.CurrentPage.ToList();
 ```
 
-Si vous exécutez l'application maintenant et sélectionnez le calendrier, vous devez obtenir la liste des événements dans une grille de données. Toutefois, les valeurs de **début** et de **fin** sont affichées de manière non conviviale. Vous pouvez contrôler le mode d'affichage de ces valeurs à l'aide d'un [convertisseur de valeur](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).
+Si vous exécutez l’application maintenant et sélectionnez le calendrier, vous devez obtenir la liste des événements dans une grille de données. Toutefois, les valeurs de **début** et de **fin** sont affichées de manière non conviviale. Vous pouvez contrôler le mode d’affichage de ces valeurs à l’aide d’un [convertisseur de valeur](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).
 
-Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l'Explorateur de solutions et choisissez **Ajouter une classe >.**... Nommez la `GraphDateTimeTimeZoneConverter.cs` classe, puis choisissez **Ajouter**. Remplacez tout le contenu du fichier par ce qui suit.
+Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l’Explorateur de solutions et choisissez **Ajouter une classe >.**... Nommez la `GraphDateTimeTimeZoneConverter.cs` classe, puis choisissez **Ajouter**. Remplacez tout le contenu du fichier par ce qui suit.
 
 ```cs
 using Microsoft.Graph;
@@ -169,9 +169,9 @@ namespace graph_tutorial
 }
 ```
 
-Ce code prend la structure [dateTimeTimeZone](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/datetimetimezone) renvoyée par Microsoft Graph et l'analyse en un `DateTimeOffset` objet. Il convertit ensuite la valeur dans le fuseau horaire de l'utilisateur et renvoie la valeur mise en forme.
+Ce code prend la structure [dateTimeTimeZone](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/datetimetimezone) renvoyée par Microsoft Graph et l’analyse en un `DateTimeOffset` objet. Il convertit ensuite la valeur dans le fuseau horaire de l’utilisateur et renvoie la valeur mise en forme.
 
-Ouvrez `CalendarPage.xaml` et ajoutez les éléments **** suivants avant `<Grid>` l'élément.
+Ouvrez `CalendarPage.xaml` et ajoutez les éléments **** suivants avant `<Grid>` l’élément.
 
 ```xml
 <Page.Resources>
@@ -191,6 +191,6 @@ Remplacez la `Binding="{Binding End.DateTime}"` ligne par ce qui suit.
 Binding="{Binding End, Converter={StaticResource DateTimeTimeZoneValueConverter}}"
 ```
 
-Exécutez l'application, connectez-vous, puis cliquez sur l'élément de navigation **calendrier** . Vous devriez voir la liste des événements dont les valeurs de **début** et de **fin** sont mises en forme.
+Exécutez l’application, connectez-vous, puis cliquez sur l’élément de navigation **calendrier** . Vous devriez voir la liste des événements dont les valeurs de **début** et de **fin** sont mises en forme.
 
-![Capture d'écran du tableau des événements](./images/add-msgraph-01.png)
+![Capture d’écran du tableau des événements](./images/add-msgraph-01.png)
