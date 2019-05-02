@@ -1,18 +1,18 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-<span data-ttu-id="0eee6-101">Dans cet exercice, vous allez incorporer Microsoft Graph dans l'application.</span><span class="sxs-lookup"><span data-stu-id="0eee6-101">In this exercise you will incorporate the Microsoft Graph into the application.</span></span> <span data-ttu-id="0eee6-102">Pour cette application, vous allez utiliser la [bibliothèque cliente Microsoft Graph pour .net](https://github.com/microsoftgraph/msgraph-sdk-dotnet) pour effectuer des appels à Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="0eee6-102">For this application, you will use the [Microsoft Graph Client Library for .NET](https://github.com/microsoftgraph/msgraph-sdk-dotnet) to make calls to Microsoft Graph.</span></span>
+<span data-ttu-id="f654c-101">Dans cet exercice, vous allez incorporer Microsoft Graph dans l’application.</span><span class="sxs-lookup"><span data-stu-id="f654c-101">In this exercise you will incorporate the Microsoft Graph into the application.</span></span> <span data-ttu-id="f654c-102">Pour cette application, vous allez utiliser la [bibliothèque cliente Microsoft Graph pour .net](https://github.com/microsoftgraph/msgraph-sdk-dotnet) pour effectuer des appels à Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="f654c-102">For this application, you will use the [Microsoft Graph Client Library for .NET](https://github.com/microsoftgraph/msgraph-sdk-dotnet) to make calls to Microsoft Graph.</span></span>
 
-## <a name="get-calendar-events-from-outlook"></a><span data-ttu-id="0eee6-103">Obtenir des événements de calendrier à partir d'Outlook</span><span class="sxs-lookup"><span data-stu-id="0eee6-103">Get calendar events from Outlook</span></span>
+## <a name="get-calendar-events-from-outlook"></a><span data-ttu-id="f654c-103">Obtenir des événements de calendrier à partir d’Outlook</span><span class="sxs-lookup"><span data-stu-id="f654c-103">Get calendar events from Outlook</span></span>
 
-<span data-ttu-id="0eee6-104">Commencez par ajouter une nouvelle page pour l'affichage Calendrier.</span><span class="sxs-lookup"><span data-stu-id="0eee6-104">Start by adding a new page for the calendar view.</span></span> <span data-ttu-id="0eee6-105">Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l'Explorateur de solutions et choisissez **Ajouter un nouvel élément >...**. Choisissez **page vierge**, entrez `CalendarPage.xaml` dans le champ **nom** , puis choisissez **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="0eee6-105">Right-click the **graph-tutorial** project in Solution Explorer and choose **Add > New Item...**. Choose **Blank Page**, enter `CalendarPage.xaml` in the **Name** field, and choose **Add**.</span></span>
+<span data-ttu-id="f654c-104">Commencez par ajouter une nouvelle page pour l’affichage Calendrier.</span><span class="sxs-lookup"><span data-stu-id="f654c-104">Start by adding a new page for the calendar view.</span></span> <span data-ttu-id="f654c-105">Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l’Explorateur de solutions et choisissez **Ajouter un nouvel élément >...**. Choisissez **page vierge**, entrez `CalendarPage.xaml` dans le champ **nom** , puis choisissez **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="f654c-105">Right-click the **graph-tutorial** project in Solution Explorer and choose **Add > New Item...**. Choose **Blank Page**, enter `CalendarPage.xaml` in the **Name** field, and choose **Add**.</span></span>
 
-<span data-ttu-id="0eee6-106">Ouvrez `CalendarPage.xaml` et ajoutez la ligne suivante à l'intérieur `<Grid>` de l'élément existant.</span><span class="sxs-lookup"><span data-stu-id="0eee6-106">Open `CalendarPage.xaml` and add the following line inside the existing `<Grid>` element.</span></span>
+<span data-ttu-id="f654c-106">Ouvrez `CalendarPage.xaml` et ajoutez la ligne suivante à l’intérieur `<Grid>` de l’élément existant.</span><span class="sxs-lookup"><span data-stu-id="f654c-106">Open `CalendarPage.xaml` and add the following line inside the existing `<Grid>` element.</span></span>
 
 ```xml
 <TextBlock x:Name="Events" TextWrapping="Wrap"/>
 ```
 
-<span data-ttu-id="0eee6-107">Ouvrez `CalendarPage.xaml.cs` et ajoutez les instructions `using` suivantes en haut du fichier.</span><span class="sxs-lookup"><span data-stu-id="0eee6-107">Open `CalendarPage.xaml.cs` and add the following `using` statements at the top of the file.</span></span>
+<span data-ttu-id="f654c-107">Ouvrez `CalendarPage.xaml.cs` et ajoutez les instructions `using` suivantes en haut du fichier.</span><span class="sxs-lookup"><span data-stu-id="f654c-107">Open `CalendarPage.xaml.cs` and add the following `using` statements at the top of the file.</span></span>
 
 ```cs
 using Microsoft.Toolkit.Services.MicrosoftGraph;
@@ -20,7 +20,7 @@ using Microsoft.Toolkit.Uwp.UI.Controls;
 using Newtonsoft.Json;
 ```
 
-<span data-ttu-id="0eee6-108">Ajoutez ensuite les fonctions suivantes à la `CalendarPage` classe.</span><span class="sxs-lookup"><span data-stu-id="0eee6-108">Then add the following functions to the `CalendarPage` class.</span></span>
+<span data-ttu-id="f654c-108">Ajoutez ensuite les fonctions suivantes à la `CalendarPage` classe.</span><span class="sxs-lookup"><span data-stu-id="f654c-108">Then add the following functions to the `CalendarPage` class.</span></span>
 
 ```cs
 private void ShowNotification(string message)
@@ -59,13 +59,13 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-<span data-ttu-id="0eee6-109">Examinez le code dans `OnNavigatedTo` est en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="0eee6-109">Consider with the code in `OnNavigatedTo` is doing.</span></span>
+<span data-ttu-id="f654c-109">Examinez le code dans `OnNavigatedTo` est en cours d’exécution.</span><span class="sxs-lookup"><span data-stu-id="f654c-109">Consider with the code in `OnNavigatedTo` is doing.</span></span>
 
-- <span data-ttu-id="0eee6-110">L'URL qui sera appelée est `/v1.0/me/events`.</span><span class="sxs-lookup"><span data-stu-id="0eee6-110">The URL that will be called is `/v1.0/me/events`.</span></span>
-- <span data-ttu-id="0eee6-111">La `Select` fonction limite les champs renvoyés pour chaque événement à ceux que l'affichage utilise réellement.</span><span class="sxs-lookup"><span data-stu-id="0eee6-111">The `Select` function limits the fields returned for each events to just those the view will actually use.</span></span>
-- <span data-ttu-id="0eee6-112">La `OrderBy` fonction trie les résultats en fonction de la date et de l'heure de leur création, avec l'élément le plus récent en premier.</span><span class="sxs-lookup"><span data-stu-id="0eee6-112">The `OrderBy` function sorts the results by the date and time they were created, with the most recent item being first.</span></span>
+- <span data-ttu-id="f654c-110">L’URL qui sera appelée est `/v1.0/me/events`.</span><span class="sxs-lookup"><span data-stu-id="f654c-110">The URL that will be called is `/v1.0/me/events`.</span></span>
+- <span data-ttu-id="f654c-111">La `Select` fonction limite les champs renvoyés pour chaque événement à ceux que l’affichage utilise réellement.</span><span class="sxs-lookup"><span data-stu-id="f654c-111">The `Select` function limits the fields returned for each events to just those the view will actually use.</span></span>
+- <span data-ttu-id="f654c-112">La `OrderBy` fonction trie les résultats en fonction de la date et de l’heure de leur création, avec l’élément le plus récent en premier.</span><span class="sxs-lookup"><span data-stu-id="f654c-112">The `OrderBy` function sorts the results by the date and time they were created, with the most recent item being first.</span></span>
 
-<span data-ttu-id="0eee6-113">Juste avant d'exécuter l'application, pour pouvoir accéder à cette page de calendrier, modifiez la `NavView_ItemInvoked` méthode dans le `MainPage.xaml.cs` fichier de manière à remplacer la `throw new NotImplementedException();` ligne comme suit.</span><span class="sxs-lookup"><span data-stu-id="0eee6-113">Just before running the app, in order to be able to navigate to this calendar page, modify the `NavView_ItemInvoked` method in the `MainPage.xaml.cs` file to replace the `throw new NotImplementedException();` line with as follows.</span></span>
+<span data-ttu-id="f654c-113">Juste avant d’exécuter l’application, pour pouvoir accéder à cette page de calendrier, modifiez la `NavView_ItemInvoked` méthode dans le `MainPage.xaml.cs` fichier de manière à remplacer la `throw new NotImplementedException();` ligne comme suit.</span><span class="sxs-lookup"><span data-stu-id="f654c-113">Just before running the app, in order to be able to navigate to this calendar page, modify the `NavView_ItemInvoked` method in the `MainPage.xaml.cs` file to replace the `throw new NotImplementedException();` line with as follows.</span></span>
 
 ```cs
 case "calendar":
@@ -73,11 +73,11 @@ case "calendar":
     break;
 ```
 
-<span data-ttu-id="0eee6-114">Vous pouvez maintenant exécuter l'application, vous connecter et cliquer sur l'élément de navigation **calendrier** dans le menu de gauche.</span><span class="sxs-lookup"><span data-stu-id="0eee6-114">You can now run the app, sign in, and click the **Calendar** navigation item in the left-hand menu.</span></span> <span data-ttu-id="0eee6-115">Vous devriez voir un dump JSON des événements sur le calendrier de l'utilisateur.</span><span class="sxs-lookup"><span data-stu-id="0eee6-115">You should see a JSON dump of the events on the user's calendar.</span></span>
+<span data-ttu-id="f654c-114">Vous pouvez maintenant exécuter l’application, vous connecter et cliquer sur l’élément de navigation **calendrier** dans le menu de gauche.</span><span class="sxs-lookup"><span data-stu-id="f654c-114">You can now run the app, sign in, and click the **Calendar** navigation item in the left-hand menu.</span></span> <span data-ttu-id="f654c-115">Vous devriez voir un dump JSON des événements sur le calendrier de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="f654c-115">You should see a JSON dump of the events on the user's calendar.</span></span>
 
-## <a name="display-the-results"></a><span data-ttu-id="0eee6-116">Afficher les résultats</span><span class="sxs-lookup"><span data-stu-id="0eee6-116">Display the results</span></span>
+## <a name="display-the-results"></a><span data-ttu-id="f654c-116">Afficher les résultats</span><span class="sxs-lookup"><span data-stu-id="f654c-116">Display the results</span></span>
 
-<span data-ttu-id="0eee6-117">À présent, vous pouvez remplacer le vidage JSON par un texte pour afficher les résultats de manière conviviale.</span><span class="sxs-lookup"><span data-stu-id="0eee6-117">Now you can replace the JSON dump with something to display the results in a user-friendly manner.</span></span> <span data-ttu-id="0eee6-118">Remplacez tout le contenu de `CalendarPage.xaml` par par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="0eee6-118">Replace the entire contents of `CalendarPage.xaml` with the following.</span></span>
+<span data-ttu-id="f654c-117">À présent, vous pouvez remplacer le vidage JSON par un texte pour afficher les résultats de manière conviviale.</span><span class="sxs-lookup"><span data-stu-id="f654c-117">Now you can replace the JSON dump with something to display the results in a user-friendly manner.</span></span> <span data-ttu-id="f654c-118">Remplacez tout le contenu de `CalendarPage.xaml` par par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="f654c-118">Replace the entire contents of `CalendarPage.xaml` with the following.</span></span>
 
 ```xml
 <Page
@@ -121,15 +121,15 @@ case "calendar":
 </Page>
 ```
 
-<span data-ttu-id="0eee6-119">Cela remplace le `TextBlock` par un `DataGrid`.</span><span class="sxs-lookup"><span data-stu-id="0eee6-119">This replaces the `TextBlock` with a `DataGrid`.</span></span> <span data-ttu-id="0eee6-120">Maintenant, `CalendarPage.xaml.cs` ouvrez et remplacez `Events.Text = JsonConvert.SerializeObject(events.CurrentPage);` la ligne par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="0eee6-120">Now open `CalendarPage.xaml.cs` and replace the `Events.Text = JsonConvert.SerializeObject(events.CurrentPage);` line with the following.</span></span>
+<span data-ttu-id="f654c-119">Cela remplace le `TextBlock` par un `DataGrid`.</span><span class="sxs-lookup"><span data-stu-id="f654c-119">This replaces the `TextBlock` with a `DataGrid`.</span></span> <span data-ttu-id="f654c-120">Maintenant, `CalendarPage.xaml.cs` ouvrez et remplacez `Events.Text = JsonConvert.SerializeObject(events.CurrentPage);` la ligne par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="f654c-120">Now open `CalendarPage.xaml.cs` and replace the `Events.Text = JsonConvert.SerializeObject(events.CurrentPage);` line with the following.</span></span>
 
 ```cs
 EventList.ItemsSource = events.CurrentPage.ToList();
 ```
 
-<span data-ttu-id="0eee6-121">Si vous exécutez l'application maintenant et sélectionnez le calendrier, vous devez obtenir la liste des événements dans une grille de données.</span><span class="sxs-lookup"><span data-stu-id="0eee6-121">If you run the app now and select the calendar, you should get a list of events in a data grid.</span></span> <span data-ttu-id="0eee6-122">Toutefois, les valeurs de **début** et de **fin** sont affichées de manière non conviviale.</span><span class="sxs-lookup"><span data-stu-id="0eee6-122">However, the **Start** and **End** values are displayed in a non-user-friendly manner.</span></span> <span data-ttu-id="0eee6-123">Vous pouvez contrôler le mode d'affichage de ces valeurs à l'aide d'un [convertisseur de valeur](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).</span><span class="sxs-lookup"><span data-stu-id="0eee6-123">You can control how those values are displayed by using a [value converter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).</span></span>
+<span data-ttu-id="f654c-121">Si vous exécutez l’application maintenant et sélectionnez le calendrier, vous devez obtenir la liste des événements dans une grille de données.</span><span class="sxs-lookup"><span data-stu-id="f654c-121">If you run the app now and select the calendar, you should get a list of events in a data grid.</span></span> <span data-ttu-id="f654c-122">Toutefois, les valeurs de **début** et de **fin** sont affichées de manière non conviviale.</span><span class="sxs-lookup"><span data-stu-id="f654c-122">However, the **Start** and **End** values are displayed in a non-user-friendly manner.</span></span> <span data-ttu-id="f654c-123">Vous pouvez contrôler le mode d’affichage de ces valeurs à l’aide d’un [convertisseur de valeur](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).</span><span class="sxs-lookup"><span data-stu-id="f654c-123">You can control how those values are displayed by using a [value converter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.IValueConverter).</span></span>
 
-<span data-ttu-id="0eee6-124">Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l'Explorateur de solutions et choisissez **Ajouter une classe >.**... Nommez la `GraphDateTimeTimeZoneConverter.cs` classe, puis choisissez **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="0eee6-124">Right-click the **graph-tutorial** project in Solution Explorer and choose **Add > Class...**. Name the class `GraphDateTimeTimeZoneConverter.cs` and choose **Add**.</span></span> <span data-ttu-id="0eee6-125">Remplacez tout le contenu du fichier par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="0eee6-125">Replace the entire contents of the file with the following.</span></span>
+<span data-ttu-id="f654c-124">Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l’Explorateur de solutions et choisissez **Ajouter une classe >.**... Nommez la `GraphDateTimeTimeZoneConverter.cs` classe, puis choisissez **Ajouter**.</span><span class="sxs-lookup"><span data-stu-id="f654c-124">Right-click the **graph-tutorial** project in Solution Explorer and choose **Add > Class...**. Name the class `GraphDateTimeTimeZoneConverter.cs` and choose **Add**.</span></span> <span data-ttu-id="f654c-125">Remplacez tout le contenu du fichier par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="f654c-125">Replace the entire contents of the file with the following.</span></span>
 
 ```cs
 using Microsoft.Graph;
@@ -169,9 +169,9 @@ namespace graph_tutorial
 }
 ```
 
-<span data-ttu-id="0eee6-126">Ce code prend la structure [dateTimeTimeZone](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/datetimetimezone) renvoyée par Microsoft Graph et l'analyse en un `DateTimeOffset` objet.</span><span class="sxs-lookup"><span data-stu-id="0eee6-126">This code takes the [dateTimeTimeZone](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/datetimetimezone) structure returned by Microsoft Graph and parses it into a `DateTimeOffset` object.</span></span> <span data-ttu-id="0eee6-127">Il convertit ensuite la valeur dans le fuseau horaire de l'utilisateur et renvoie la valeur mise en forme.</span><span class="sxs-lookup"><span data-stu-id="0eee6-127">It then converts the value into the user's time zone and returns the formatted value.</span></span>
+<span data-ttu-id="f654c-126">Ce code prend la structure [dateTimeTimeZone](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/datetimetimezone) renvoyée par Microsoft Graph et l’analyse en un `DateTimeOffset` objet.</span><span class="sxs-lookup"><span data-stu-id="f654c-126">This code takes the [dateTimeTimeZone](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/datetimetimezone) structure returned by Microsoft Graph and parses it into a `DateTimeOffset` object.</span></span> <span data-ttu-id="f654c-127">Il convertit ensuite la valeur dans le fuseau horaire de l’utilisateur et renvoie la valeur mise en forme.</span><span class="sxs-lookup"><span data-stu-id="f654c-127">It then converts the value into the user's time zone and returns the formatted value.</span></span>
 
-<span data-ttu-id="0eee6-128">Ouvrez `CalendarPage.xaml` et ajoutez les éléments \*\*\*\* suivants avant `<Grid>` l'élément.</span><span class="sxs-lookup"><span data-stu-id="0eee6-128">Open `CalendarPage.xaml` and add the following **before** the `<Grid>` element.</span></span>
+<span data-ttu-id="f654c-128">Ouvrez `CalendarPage.xaml` et ajoutez les éléments \*\*\*\* suivants avant `<Grid>` l’élément.</span><span class="sxs-lookup"><span data-stu-id="f654c-128">Open `CalendarPage.xaml` and add the following **before** the `<Grid>` element.</span></span>
 
 ```xml
 <Page.Resources>
@@ -179,18 +179,18 @@ namespace graph_tutorial
 </Page.Resources>
 ```
 
-<span data-ttu-id="0eee6-129">Ensuite, remplacez la `Binding="{Binding Start.DateTime}"` ligne par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="0eee6-129">Then, replace the `Binding="{Binding Start.DateTime}"` line with the following.</span></span>
+<span data-ttu-id="f654c-129">Ensuite, remplacez la `Binding="{Binding Start.DateTime}"` ligne par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="f654c-129">Then, replace the `Binding="{Binding Start.DateTime}"` line with the following.</span></span>
 
 ```xml
 Binding="{Binding Start, Converter={StaticResource DateTimeTimeZoneValueConverter}}"
 ```
 
-<span data-ttu-id="0eee6-130">Remplacez la `Binding="{Binding End.DateTime}"` ligne par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="0eee6-130">Replace the `Binding="{Binding End.DateTime}"` line with the following.</span></span>
+<span data-ttu-id="f654c-130">Remplacez la `Binding="{Binding End.DateTime}"` ligne par ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="f654c-130">Replace the `Binding="{Binding End.DateTime}"` line with the following.</span></span>
 
 ```xml
 Binding="{Binding End, Converter={StaticResource DateTimeTimeZoneValueConverter}}"
 ```
 
-<span data-ttu-id="0eee6-131">Exécutez l'application, connectez-vous, puis cliquez sur l'élément de navigation **calendrier** .</span><span class="sxs-lookup"><span data-stu-id="0eee6-131">Run the app, sign in, and click the **Calendar** navigation item.</span></span> <span data-ttu-id="0eee6-132">Vous devriez voir la liste des événements dont les valeurs de **début** et de **fin** sont mises en forme.</span><span class="sxs-lookup"><span data-stu-id="0eee6-132">You should see the list of events with the **Start** and **End** values formatted.</span></span>
+<span data-ttu-id="f654c-131">Exécutez l’application, connectez-vous, puis cliquez sur l’élément de navigation **calendrier** .</span><span class="sxs-lookup"><span data-stu-id="f654c-131">Run the app, sign in, and click the **Calendar** navigation item.</span></span> <span data-ttu-id="f654c-132">Vous devriez voir la liste des événements dont les valeurs de **début** et de **fin** sont mises en forme.</span><span class="sxs-lookup"><span data-stu-id="f654c-132">You should see the list of events with the **Start** and **End** values formatted.</span></span>
 
-![Capture d'écran du tableau des événements](./images/add-msgraph-01.png)
+![Capture d’écran du tableau des événements](./images/add-msgraph-01.png)
