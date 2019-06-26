@@ -24,20 +24,22 @@ Si vous souhaitez simplement obtenir l’exemple complet généré en suivant ce
 
 ## <a name="watch-the-module"></a>Regarder le module
 
-Ce module a été enregistré et est disponible dans le canal YouTube de développement Office: [créer des applications UWP avec le kit de développement logiciel (SDK) Microsoft Graph .net](https://youtu.be/XNxBUmqcf6c)
+Ce module a été enregistré et est disponible dans le canal YouTube de développement Office: [créer des applications UWP avec le kit de développement logiciel (SDK) Microsoft Graph .net](https://youtu.be/oBYCBxkWMRA)
 
 ## <a name="contributors"></a>Collaborateurs
 
-| Rôles                | Auteur (s)                                                        |
-| -------------------- | ---------------------------------------------------------------- |
-| Manuels/diapositives de l’atelier | Andrew Connell (MVP Microsoft, Voitanos) @andrewconnell          |
-| QA                   | Julie Turner (MVP Microsoft, Sympraxis Consulting) @juliemturner |
-| Commanditaire/support    | Yina (Microsoft) @yina_arenas                             |
+|        Rôles         |                                           Auteur (s)                                           |
+| -------------------- | --------------------------------------------------------------------------------------------- |
+| Manuels/diapositives de l’atelier | Andrew Connell (MVP Microsoft, Voitanos) [@andrewconnell](//github.com/andrewconnell)         |
+| QA                   | Julie Turner (MVP Microsoft, Sympraxis Consulting) [@juliemturner](//github.com/juliemturner) |
+| Commanditaire/support    | Yina (Microsoft) [@yina_arenas](//github.com//github.com/yina_arenas)                  |
 
 ## <a name="version-history"></a>Historique des versions
 
-| Version | Date               | Comments                                             |
+| Version |        Date        |                       Comments                       |
 | ------- | ------------------ | ---------------------------------------------------- |
+| 1.9     | 18 juin 2019      | Fichier Lisez-moi mis à jour pour l’enregistrement de captures numériques     |
+| 1.8     | 24 mai 2019       | actualisation du contenu 2019Q4                               |
 | 1.7     | 6 mars 2019      | actualisation du contenu 2019Q3                               |
 | 1.6     | 19 décembre 2018  | actualisation du contenu 2019Q2                               |
 | 1,5     | 27 novembre 2018  | Intégré à docs.microsoft.com/graph                |

@@ -24,17 +24,13 @@ Si vous n’avez pas de compte Microsoft, vous disposez de deux options pour obt
 
     - Définissez le **Nom** sur `UWP Graph Tutorial`.
     - Définissez les **Types de comptes pris en charge** sur **Comptes dans un annuaire organisationnel et comptes personnels Microsoft**.
-    - Laissez **Redirect URI** vide.
+    - Sous **URI**de redirection, remplacez la liste déroulante par **client Public (mobile & Desktop)** et définissez `urn:ietf:wg:oauth:2.0:oob`la valeur sur.
 
-    ![Capture d’écran de la page inscrire une application](/tutorial/images/aad-register-an-app.png)
+    ![Capture d’écran de la page inscrire une application](/tutorial/images/aad-register-app.png)
 
 1. Choisissez **Inscrire**. Sur la page **didacticiel Graph UWP** , copiez la valeur de l' **ID d’application (client)** et enregistrez-la, vous en aurez besoin à l’étape suivante.
 
     ![Capture d’écran de l’ID d’application de la nouvelle inscription de l’application](/tutorial/images/aad-application-id.png)
-
-1. Sélectionnez le lien **Ajouter un URI de redirection** . Sur la page **URI** de redirection, recherchez la section **URI de redirection suggérée pour les clients publics (mobile, bureau)** . Sélectionnez l' `urn:ietf:wg:oauth:2.0:oob` URI, puis **Enregistrer**.
-
-    ![Capture d’écran de la page des URI de redirection](/tutorial/images/aad-redirect-uris.png)
 
 ## <a name="configure-the-sample"></a>Configurer l’exemple
 
