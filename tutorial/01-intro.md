@@ -10,7 +10,7 @@ Ce didacticiel vous apprend à créer une application de plateforme Windows univ
 Avant de commencer ce didacticiel, [Visual Studio](https://visualstudio.microsoft.com/vs/) doit être installé sur un ordinateur exécutant Windows 10 avec [le mode développeur activé](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). Si vous ne disposez pas de Visual Studio, reportez-vous au lien précédent pour obtenir les options de téléchargement.
 
 > [!NOTE]
-> Ce didacticiel a été écrit avec Visual Studio 2017 version 15.8.1. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
+> Ce didacticiel a été écrit avec Visual Studio 2019 version 16.1.5. Les étapes de ce guide peuvent fonctionner avec d’autres versions, mais cela n’a pas été testé.
 
 ## <a name="watch-the-tutorial"></a>Regarder le didacticiel
 
