@@ -23,10 +23,10 @@ Avant de poursuivre, installez des packages NuGet supplémentaires que vous util
 Sélectionnez **outils > gestionnaire de package NuGet > console Gestionnaire de package**. Dans la console Gestionnaire de package, entrez les commandes suivantes.
 
 ```Powershell
-Install-Package Microsoft.Toolkit.Uwp.Ui.Controls -Version 5.1.1
-Install-Package Microsoft.Toolkit.Uwp.Ui.Controls.DataGrid -Version 5.1.0
-Install-Package Microsoft.Toolkit.Uwp.Ui.Controls.Graph -Version 5.1.0
-Install-Package Microsoft.Graph -Version 1.16.0
+Install-Package Microsoft.Toolkit.Uwp.Ui.Controls -Version 6.0.0
+Install-Package Microsoft.Toolkit.Uwp.Ui.Controls.DataGrid -Version 6.0.0
+Install-Package Microsoft.Toolkit.Uwp.Ui.Controls.Graph -Version 6.0.0
+Install-Package Microsoft.Graph -Version 1.20.0
 ```
 
 ## <a name="design-the-app"></a>Concevoir l’application
@@ -142,7 +142,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-Enregistrez toutes vos modifications, appuyez sur **F5** ou sélectionnez **débogage > démarrer** le débogage dans Visual Studio.
+Enregistrez toutes vos modifications, appuyez sur **F5** ou sélectionnez **débogage > démarrer le débogage** dans Visual Studio.
 
 > [!NOTE]
 > Assurez-vous que vous sélectionnez la configuration appropriée pour votre ordinateur (ARM, x64, x86).
