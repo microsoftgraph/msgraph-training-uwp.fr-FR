@@ -19,15 +19,13 @@ Dans cette section, vous allez créer une application UWP.
 
 Avant de poursuivre, installez des packages NuGet supplémentaires que vous utiliserez plus tard.
 
-- [Microsoft. Toolkit. UWP. UI. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Ui.Controls/) pour ajouter des contrôles d’interface utilisateur pour les notifications et les indicateurs de chargement dans l’application.
 - [Microsoft. Toolkit. UWP. UI. Controls. DataGrid](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Ui.Controls.DataGrid/) pour afficher les informations renvoyées par Microsoft Graph.
 - [Microsoft. Toolkit. Graph. Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Graph.Controls) pour gérer la récupération de la connexion et du jeton d’accès.
 
 1. Sélectionnez **Outils > Gestionnaire de package NuGet > Console Gestionnaire de package**. Dans le menu Console du Gestionnaire de package, saisissez les commandes suivantes.
 
     ```powershell
-    Install-Package Microsoft.Toolkit.Uwp.Ui.Controls -Version 6.0.0
-    Install-Package Microsoft.Toolkit.Uwp.Ui.Controls.DataGrid -Version 6.0.0
+    Install-Package Microsoft.Toolkit.Uwp.Ui.Controls.DataGrid -IncludePrerelease
     Install-Package Microsoft.Toolkit.Graph.Controls -IncludePrerelease
     ```
 
@@ -45,13 +43,13 @@ Dans cette section, vous allez créer l’interface utilisateur de l’applicati
 
     :::code language="xaml" source="../demo/GraphTutorial/MainPage.xaml" id="MainPageXamlSnippet":::
 
-    Cela définit un [NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview) de base avec des liens de navigation **Accueil** et **calendrier** pour agir en tant que vue principale de l’application. Il ajoute également un contrôle [LoginButton](https://github.com/windows-toolkit/Graph-Controls) dans l’en-tête de la vue. Ce contrôle permettra à l’utilisateur de se connecter et de se déconnecter. Le contrôle n’est pas encore entièrement activé, vous le configurerez dans un exercice ultérieur.
+    Cette définition définit un [NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview) de base avec des liens de navigation d’événement **Accueil**, **calendrier** et **nouveau** pour agir en tant que vue principale de l’application. Il ajoute également un contrôle [LoginButton](https://github.com/windows-toolkit/Graph-Controls) dans l’en-tête de la vue. Ce contrôle permettra à l’utilisateur de se connecter et de se déconnecter. Le contrôle n’est pas encore entièrement activé, vous le configurerez dans un exercice ultérieur.
 
-1. Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l’Explorateur de solutions et sélectionnez **Ajouter > nouvel élément...**. Choisissez **page vierge**, entrez `HomePage.xaml` dans le champ **nom** , puis sélectionnez **Ajouter**. Remplacez l’élément `<Grid>` existant dans le fichier par ce qui suit.
+1. Cliquez avec le bouton droit sur le projet du **didacticiel Graph** dans l’Explorateur de solutions et sélectionnez **Ajouter > nouvel élément...**. Choisissez **page vierge**, entrez `HomePage.xaml` dans le champ **nom** , puis sélectionnez **Ajouter**. Remplacez l' `<Grid>` élément existant dans le fichier par ce qui suit.
 
     :::code language="xaml" source="../demo/GraphTutorial/HomePage.xaml" id="HomePageGridSnippet" highlight="2-5":::
 
-1. Développez **MainPage. Xaml** dans l’Explorateur de `MainPage.xaml.cs`solutions, puis ouvrez. Ajoutez la fonction suivante à la `MainPage` classe pour gérer l’état de l’authentification.
+1. Développez **MainPage. Xaml** dans l’Explorateur de solutions, puis ouvrez `MainPage.xaml.cs` . Ajoutez la fonction suivante à la `MainPage` classe pour gérer l’état de l’authentification.
 
     :::code language="csharp" source="../demo/GraphTutorial/MainPage.xaml.cs" id="SetAuthStateSnippet":::
 
@@ -69,7 +67,7 @@ Dans cette section, vous allez créer l’interface utilisateur de l’applicati
     RootFrame.Navigate(typeof(HomePage));
     ```
 
-    Lorsque l’application démarre pour la première fois, elle Initialise l’état d' `false` authentification et accède à la page d’accueil.
+    Lorsque l’application démarre pour la première fois, elle Initialise l’état d’authentification `false` et accède à la page d’accueil.
 
 1. Ajoutez le gestionnaire d’événements suivant pour charger la page demandée lorsque l’utilisateur sélectionne un élément dans l’affichage de navigation.
 
@@ -80,6 +78,9 @@ Dans cette section, vous allez créer l’interface utilisateur de l’applicati
 
         switch (invokedItem.ToLower())
         {
+            case "new event":
+                throw new NotImplementedException();
+                break;
             case "calendar":
                 throw new NotImplementedException();
                 break;
